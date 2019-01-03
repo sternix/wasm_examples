@@ -19,10 +19,12 @@ func main() {
 	doc = wasm.CurrentDocument()
 
 	btnAll := doc.ElementById("btnAll").(wasm.HTMLButtonElement)
-	btnAll.OnClick(func(wasm.MouseEvent) {
+	btnAllClick := func(wasm.MouseEvent) {
 		filterSelection("all")
 		highlightActive(btnAll)
-	})
+	}
+
+	btnAll.OnClick(btnAllClick)
 
 	btnCars := doc.ElementById("btnCars").(wasm.HTMLButtonElement)
 	btnCars.OnClick(func(wasm.MouseEvent) {
@@ -52,8 +54,7 @@ func main() {
 	// panic: JavaScript error: Argument 1 of EventTarget.dispatchEvent does not implement interface Event.
 	// eh.Dispatch()
 
-	filterSelection("all")
-	highlightActive(btnAll)
+	btnAllClick(nil)
 
 	wasm.Loop()
 }

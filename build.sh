@@ -20,6 +20,7 @@ w3schools/filter_list
 w3schools/filter_table
 w3schools/autocomplete
 w3schools/filter_elements
+w3schools/include_html
 '
 
 OUT_DIR="./server/assets"
