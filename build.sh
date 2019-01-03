@@ -19,6 +19,7 @@ w3schools/closable_list_items
 w3schools/filter_list
 w3schools/filter_table
 w3schools/autocomplete
+w3schools/filter_elements
 '
 
 OUT_DIR="./server/assets"

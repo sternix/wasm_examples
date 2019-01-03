@@ -1,3 +1,3 @@
 # wasm_examples
 
-Examples for http://github.com/sternix/wasm library
+Examples for https://github.com/sternix/wasm library
