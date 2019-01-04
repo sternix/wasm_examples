@@ -21,6 +21,7 @@ w3schools/filter_table
 w3schools/autocomplete
 w3schools/filter_elements
 w3schools/include_html
+w3schools/todolist
 '
 
 OUT_DIR="./server/assets"
