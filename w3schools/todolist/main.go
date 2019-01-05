@@ -78,8 +78,8 @@ func addNewItem(item Item) {
 	li.AppendChild(t)
 	myUL.AppendChild(li)
 	span := wasm.NewHTMLSpanElement()
-	txt := doc.CreateTextNode("\u00D7")
 	span.SetClassName("close")
+	txt := doc.CreateTextNode("\u00D7")
 	span.AppendChild(txt)
 	li.AppendChild(span)
 

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Sort a HTML List Alphabetically</title>
+</head>
+<body>
+
+<p>Click the button to sort the list ascending (A to Z):</p>
+<p>Click again to sort the list descending (Z to A):</p>
+
+<button id="btnSort">Sort</button>
+<ul id="ulCities"></ul>
+
+<script src="wasm_exec.js"></script>
+<script>
+	const go = new Go();
+	WebAssembly.instantiateStreaming(fetch("sort_list.wasm"), go.importObject).then((result) => {
+		go.run(result.instance);
+	});
+</script>
+
+</body>
+</html>
