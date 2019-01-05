@@ -23,6 +23,7 @@ w3schools/filter_elements
 w3schools/include_html
 w3schools/todolist
 w3schools/sort_list
+w3schools/image_zoom
 '
 
 OUT_DIR="./server/assets"
