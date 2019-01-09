@@ -74,6 +74,7 @@ func main() {
 	if gl == nil {
 		win.Alert("Browser might support webgl")
 		wasm.Exit()
+		return
 	}
 
 	// Convert buffers to JS TypedArrays

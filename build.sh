@@ -24,6 +24,7 @@ w3schools/include_html
 w3schools/todolist
 w3schools/sort_list
 w3schools/image_zoom
+w3schools/animation
 '
 
 OUT_DIR="./server/assets"
