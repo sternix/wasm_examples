@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Image Comparison Slider</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		.img-comp-container {
+			position: relative;
+			height: 200px; /*should be the same height as the images*/
+		}
+
+		.img-comp-img {
+			position: absolute;
+			width: auto;
+			height: auto;
+			overflow:hidden;
+		}
+
+		.img-comp-img img {
+			display:block;
+			vertical-align:middle;
+		}
+
+		.img-comp-slider {
+			position: absolute;
+			z-index:9;
+			cursor: ew-resize;
+			/*set the appearance of the slider:*/
+			width: 40px;
+			height: 40px;
+			background-color: #2196F3;
+			opacity: 0.7;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Compare Two Images</h1>
+
+<p>Click and slide the blue slider to compare two images:</p>
+
+<div class="img-comp-container">
+	<div class="img-comp-img">
+		<img src="images/img_snow.jpg" width="300" height="200">
+	</div>
+	<div class="img-comp-img img-comp-overlay">
+		<img src="images/img_forest.jpg" width="300" height="200">
+	</div>
+</div>
+
+<script src="wasm_exec.js"></script>
+<script>
+	const go = new Go();
+	WebAssembly.instantiateStreaming(fetch("image_comparison_slider.wasm"), go.importObject).then((result) => {
+		go.run(result.instance);
+	});
+</script>
+
+</body>
+</html>
