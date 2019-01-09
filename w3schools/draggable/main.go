@@ -31,8 +31,8 @@ func dragElement(elm wasm.HTMLElement) {
 		pos2 = pos4 - e.ClientY()
 		pos3 = e.ClientX()
 		pos4 = e.ClientY()
-		elm.Style().SetProperty("top", fmt.Sprintf("%fpx", float64(elm.OffsetTop())-pos2))
-		elm.Style().SetProperty("left", fmt.Sprintf("%fpx", float64(elm.OffsetLeft())-pos1))
+		elm.Style().SetTop(fmt.Sprintf("%fpx", float64(elm.OffsetTop())-pos2))
+		elm.Style().SetLeft(fmt.Sprintf("%fpx", float64(elm.OffsetLeft())-pos1))
 	}
 
 	closeDragElement := func(wasm.MouseEvent) {

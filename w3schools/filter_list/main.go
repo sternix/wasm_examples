@@ -32,9 +32,9 @@ func filterList(wasm.KeyboardEvent) {
 		txtValue := strings.ToUpper(a.TextContent())
 		hli := li.(wasm.HTMLElement)
 		if strings.Index(txtValue, filter) > -1 {
-			hli.Style().SetProperty("display", "")
+			hli.Style().SetDisplay("")
 		} else {
-			hli.Style().SetProperty("display", "none")
+			hli.Style().SetDisplay("none")
 		}
 	}
 }

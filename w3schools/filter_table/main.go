@@ -34,9 +34,9 @@ func filterTable(wasm.KeyboardEvent) {
 			td := tds[0].(wasm.HTMLElement)
 			txtValue := strings.ToUpper(td.TextContent())
 			if strings.Index(txtValue, filter) > -1 {
-				htr.Style().SetProperty("display", "")
+				htr.Style().SetDisplay("")
 			} else {
-				htr.Style().SetProperty("display", "none")
+				htr.Style().SetDisplay("none")
 			}
 		}
 	}

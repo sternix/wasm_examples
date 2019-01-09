@@ -16,16 +16,16 @@ func main() {
 	span := doc.ElementsByClassName("close")[0].(wasm.HTMLElement)
 
 	btn.OnClick(func(wasm.MouseEvent) {
-		modal.Style().SetProperty("display", "block")
+		modal.Style().SetDisplay("block")
 	})
 
 	span.OnClick(func(wasm.MouseEvent) {
-		modal.Style().SetProperty("display", "none")
+		modal.Style().SetDisplay("none")
 	})
 
 	win.OnClick(func(e wasm.MouseEvent) {
 		if wasm.Equal(e.Target(), modal) {
-			modal.Style().SetProperty("display", "none")
+			modal.Style().SetDisplay("none")
 		}
 	})
 

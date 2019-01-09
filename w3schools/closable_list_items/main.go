@@ -16,7 +16,7 @@ func main() {
 	for _, btn := range closeButtons {
 		if closeButton, ok := btn.(wasm.HTMLElement); ok {
 			closeButton.OnClick(func(wasm.MouseEvent) {
-				closeButton.ParentElement().(wasm.HTMLElement).Style().SetProperty("display", "none")
+				closeButton.ParentElement().(wasm.HTMLElement).Style().SetDisplay("none")
 			})
 		}
 	}

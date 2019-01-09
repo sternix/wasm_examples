@@ -26,8 +26,8 @@ func main() {
 			win.ClearInterval(id)
 		} else {
 			pos++
-			elem.Style().SetProperty("top", fmt.Sprintf("%dpx", pos))
-			elem.Style().SetProperty("left", fmt.Sprintf("%dpx", pos))
+			elem.Style().SetTop(fmt.Sprintf("%dpx", pos))
+			elem.Style().SetLeft(fmt.Sprintf("%dpx", pos))
 		}
 	})
 

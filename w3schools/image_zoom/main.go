@@ -40,8 +40,8 @@ func ImageZoom(imgId, resultId string) {
 	cx := result.OffsetWidth() / lens.OffsetWidth()
 	cy := result.OffsetHeight() / lens.OffsetHeight()
 
-	result.Style().SetProperty("background-image", fmt.Sprintf("url('%s')", img.Src()))
-	result.Style().SetProperty("background-size", fmt.Sprintf("%dpx %dpx", img.Width()*cx, img.Height()*cy))
+	result.Style().SetBackgroundImage(fmt.Sprintf("url('%s')", img.Src()))
+	result.Style().SetBackgroundSize(fmt.Sprintf("%dpx %dpx", img.Width()*cx, img.Height()*cy))
 
 	getCursorPos := func(e wasm.PointerEvent) Pos {
 		a := img.BoundingClientRect()
@@ -79,9 +79,9 @@ func ImageZoom(imgId, resultId string) {
 			y = 0
 		}
 
-		lens.Style().SetProperty("left", fmt.Sprintf("%dpx", x))
-		lens.Style().SetProperty("top", fmt.Sprintf("%dpx", y))
-		result.Style().SetProperty("background-position", fmt.Sprintf("-%dpx -%dpx", (x*cx), (y*cy)))
+		lens.Style().SetLeft(fmt.Sprintf("%dpx", x))
+		lens.Style().SetTop(fmt.Sprintf("%dpx", y))
+		result.Style().SetBackgroundPosition(fmt.Sprintf("-%dpx -%dpx", (x*cx), (y*cy)))
 	}
 
 	lens.OnPointerMove(func(e wasm.PointerEvent) {

@@ -20,7 +20,7 @@ var (
 
 func showSlides() {
 	for i := 0; i < len(slides); i++ {
-		slides[i].Style().SetProperty("display", "none")
+		slides[i].Style().SetDisplay("none")
 	}
 	slideIndex++
 	if slideIndex > len(slides) {
@@ -31,7 +31,7 @@ func showSlides() {
 		dots[i].SetClassName(strings.ReplaceAll(dots[i].ClassName(), " active", ""))
 	}
 
-	slides[slideIndex-1].Style().SetProperty("display", "block")
+	slides[slideIndex-1].Style().SetDisplay("block")
 	dots[slideIndex-1].SetClassName(dots[slideIndex-1].ClassName() + " active")
 }
 

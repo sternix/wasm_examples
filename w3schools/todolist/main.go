@@ -84,6 +84,6 @@ func addNewItem(item Item) {
 	li.AppendChild(span)
 
 	span.OnClick(func(wasm.MouseEvent) {
-		li.Style().SetProperty("display", "none")
+		li.Style().SetDisplay("none")
 	})
 }

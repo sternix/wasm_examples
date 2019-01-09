@@ -18,10 +18,10 @@ func main() {
 			this := btn
 			this.ClassList().Toggle("active")
 			panel := this.NextElementSibling().(wasm.HTMLDivElement)
-			if panel.Style().PropertyValue("max-height") != "" {
-				panel.Style().SetProperty("max-height", "")
+			if panel.Style().MaxHeight() != "" {
+				panel.Style().SetMaxHeight("")
 			} else {
-				panel.Style().SetProperty("max-height", fmt.Sprintf("%dpx", panel.ScrollHeight()))
+				panel.Style().SetMaxHeight(fmt.Sprintf("%dpx", panel.ScrollHeight()))
 			}
 		})
 	}

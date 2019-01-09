@@ -32,7 +32,7 @@ func CompareImages(img wasm.HTMLElement) {
 
 	w = img.OffsetWidth()
 	h = img.OffsetHeight()
-	img.Style().SetProperty("width", fmt.Sprintf("%dpx", w/2))
+	img.Style().SetWidth(fmt.Sprintf("%dpx", w/2))
 
 	getCursorPos := func(e wasm.MouseEvent) int {
 		rect := img.BoundingClientRect()
@@ -41,8 +41,8 @@ func CompareImages(img wasm.HTMLElement) {
 	}
 
 	slide := func(pos int) {
-		img.Style().SetProperty("width", fmt.Sprintf("%dpx", pos))
-		slider.Style().SetProperty("left", fmt.Sprintf("%dpx", img.OffsetWidth()-(slider.OffsetWidth()/2)))
+		img.Style().SetWidth(fmt.Sprintf("%dpx", pos))
+		slider.Style().SetLeft(fmt.Sprintf("%dpx", img.OffsetWidth()-(slider.OffsetWidth()/2)))
 	}
 
 	slideMove := func(e wasm.MouseEvent) {
@@ -71,8 +71,8 @@ func CompareImages(img wasm.HTMLElement) {
 	slider = wasm.NewHTMLDivElement()
 	slider.SetClassName("img-comp-slider")
 	img.ParentElement().InsertBefore(slider, img)
-	slider.Style().SetProperty("top", fmt.Sprintf("%dpx", (h/2)-(slider.OffsetHeight()/2)))
-	slider.Style().SetProperty("left", fmt.Sprintf("%dpx", (w/2)-(slider.OffsetWidth()/2)))
+	slider.Style().SetTop(fmt.Sprintf("%dpx", (h/2)-(slider.OffsetHeight()/2)))
+	slider.Style().SetLeft(fmt.Sprintf("%dpx", (w/2)-(slider.OffsetWidth()/2)))
 	slider.OnMouseDown(slideReady)
 
 	win.OnMouseUp(slideFinish)
