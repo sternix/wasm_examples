@@ -26,6 +26,7 @@ w3schools/sort_list
 w3schools/image_zoom
 w3schools/animation
 w3schools/image_comparison_slider
+w3schools/image_magnifier_glass
 '
 
 OUT_DIR="./server/assets"
