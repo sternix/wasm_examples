@@ -7,6 +7,7 @@ DIRS='
 ball_drop_game
 dom
 life
+webgl/hello_webgl
 webgl/rotating-cube
 webgl/splashy
 webgl/triangle

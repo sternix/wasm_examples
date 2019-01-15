@@ -34,7 +34,7 @@ func Magnify(id string, zoom int) {
 	glsStyle := glass.Style()
 	glsStyle.SetBackgroundImage(fmt.Sprintf("url('%s')", img.Src()))
 	glsStyle.SetBackgroundRepeat("no-repeat")
-	glsStyle.SetBackgroundSize(fmt.Sprintf("%dpx %dpx", (img.Width() * zoom), (img.Height() * zoom)))
+	glsStyle.SetBackgroundSize(fmt.Sprintf("%dpx %dpx", (int(img.Width()) * zoom), (int(img.Height()) * zoom)))
 
 	w := glass.OffsetWidth() / 2
 	h := glass.OffsetHeight() / 2
@@ -61,16 +61,16 @@ func Magnify(id string, zoom int) {
 		x := pos.X
 		y := pos.Y
 
-		if x > (img.Width() - (w / zoom)) {
-			x = img.Width() - (w / zoom)
+		if x > (int(img.Width()) - (w / zoom)) {
+			x = int(img.Width()) - (w / zoom)
 		}
 
 		if x < (w / zoom) {
 			x = w / zoom
 		}
 
-		if y > (img.Height() - (h / zoom)) {
-			y = img.Height() - (h / zoom)
+		if y > (int(img.Height()) - (h / zoom)) {
+			y = int(img.Height()) - (h / zoom)
 		}
 
 		if y < (h / zoom) {

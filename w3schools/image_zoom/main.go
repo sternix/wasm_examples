@@ -41,7 +41,7 @@ func ImageZoom(imgId, resultId string) {
 	cy := result.OffsetHeight() / lens.OffsetHeight()
 
 	result.Style().SetBackgroundImage(fmt.Sprintf("url('%s')", img.Src()))
-	result.Style().SetBackgroundSize(fmt.Sprintf("%dpx %dpx", img.Width()*cx, img.Height()*cy))
+	result.Style().SetBackgroundSize(fmt.Sprintf("%dpx %dpx", int(img.Width())*cx, int(img.Height())*cy))
 
 	getCursorPos := func(e wasm.PointerEvent) Pos {
 		a := img.BoundingClientRect()
@@ -63,16 +63,16 @@ func ImageZoom(imgId, resultId string) {
 		x := pos.X - lens.OffsetWidth()/2
 		y := pos.Y - lens.OffsetHeight()/2
 
-		if x > (img.Width() - lens.OffsetWidth()) {
-			x = img.Width() - lens.OffsetWidth()
+		if x > (int(img.Width()) - lens.OffsetWidth()) {
+			x = int(img.Width()) - lens.OffsetWidth()
 		}
 
 		if x < 0 {
 			x = 0
 		}
 
-		if y > (img.Height() - lens.OffsetHeight()) {
-			y = img.Height() - lens.OffsetHeight()
+		if y > (int(img.Height()) - lens.OffsetHeight()) {
+			y = int(img.Height()) - lens.OffsetHeight()
 		}
 
 		if y < 0 {
