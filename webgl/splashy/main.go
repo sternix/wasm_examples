@@ -42,8 +42,8 @@ func main() {
 	canvasEl := doc.ElementById("mycanvas").(wasm.HTMLCanvasElement)
 	width = doc.Body().ClientWidth()
 	height = doc.Body().ClientHeight()
-	canvasEl.SetWidth(width)
-	canvasEl.SetHeight(height)
+	canvasEl.SetWidth(uint(width))
+	canvasEl.SetHeight(uint(height))
 
 	gl = canvasEl.ContextWebGL()
 	if gl == nil {

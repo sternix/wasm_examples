@@ -13,22 +13,16 @@ import (
 	"syscall/js"
 )
 
-var (
-	width  int
-	height int
-	gl     wasm.WebGLRenderingContext
-)
-
 func main() {
 	win := wasm.CurrentWindow()
 	doc := wasm.CurrentDocument()
 	canvasEl := doc.ElementById("gocanvas").(wasm.HTMLCanvasElement)
-	width = doc.Body().ClientWidth()
-	height = doc.Body().ClientHeight()
-	canvasEl.SetWidth(width)
-	canvasEl.SetHeight(height)
+	width := doc.Body().ClientWidth()
+	height := doc.Body().ClientHeight()
+	canvasEl.SetWidth(uint(width))
+	canvasEl.SetHeight(uint(height))
 
-	gl = canvasEl.ContextWebGL()
+	gl := canvasEl.ContextWebGL()
 	if gl == nil {
 		win.Alert("Browser might support webgl")
 		wasm.Exit()

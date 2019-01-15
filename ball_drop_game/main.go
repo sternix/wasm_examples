@@ -62,8 +62,8 @@ func main() {
 	width = float64(w)
 	height = float64(h)
 
-	canvasEl.SetWidth(w)
-	canvasEl.SetHeight(h)
+	canvasEl.SetWidth(uint(w))
+	canvasEl.SetHeight(uint(h))
 
 	ctx = canvasEl.Context2D()
 	playerX = width / 2

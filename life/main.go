@@ -61,8 +61,8 @@ func main() {
 
 func setSize(w, h int) {
 	canvas := doc.QuerySelector("canvas").(wasm.HTMLCanvasElement)
-	canvas.SetWidth(w * 8)
-	canvas.SetHeight(h * 8)
+	canvas.SetWidth(uint(w * 8))
+	canvas.SetHeight(uint(h * 8))
 	context = canvas.Context2D()
 	clearScreen()
 }
