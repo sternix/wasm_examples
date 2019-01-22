@@ -85,17 +85,17 @@ func main() {
 	// Create vertex buffer
 	vertexBuffer := gl.CreateBuffer()
 	gl.BindBuffer(wasm.ARRAY_BUFFER, vertexBuffer)
-	gl.BufferDataSource(wasm.ARRAY_BUFFER, vertices, wasm.STATIC_DRAW)
+	gl.BufferData(wasm.ARRAY_BUFFER, vertices, wasm.STATIC_DRAW)
 
 	// Create color buffer
 	colorBuffer := gl.CreateBuffer()
 	gl.BindBuffer(wasm.ARRAY_BUFFER, colorBuffer)
-	gl.BufferDataSource(wasm.ARRAY_BUFFER, colors, wasm.STATIC_DRAW)
+	gl.BufferData(wasm.ARRAY_BUFFER, colors, wasm.STATIC_DRAW)
 
 	// Create index buffer
 	indexBuffer := gl.CreateBuffer()
 	gl.BindBuffer(wasm.ELEMENT_ARRAY_BUFFER, indexBuffer)
-	gl.BufferDataSource(wasm.ELEMENT_ARRAY_BUFFER, indices, wasm.STATIC_DRAW)
+	gl.BufferData(wasm.ELEMENT_ARRAY_BUFFER, indices, wasm.STATIC_DRAW)
 
 	//// Shaders ////
 

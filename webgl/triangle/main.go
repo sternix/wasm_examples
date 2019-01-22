@@ -39,7 +39,7 @@ func main() {
 	gl.BindBuffer(wasm.ARRAY_BUFFER, vertexBuffer)
 
 	// Pass data to buffer
-	gl.BufferDataSource(wasm.ARRAY_BUFFER, vertices, wasm.STATIC_DRAW)
+	gl.BufferData(wasm.ARRAY_BUFFER, vertices, wasm.STATIC_DRAW)
 
 	// Unbind buffer
 	gl.BindBuffer(wasm.ARRAY_BUFFER, nil)
@@ -57,7 +57,7 @@ func main() {
 	gl.BindBuffer(wasm.ELEMENT_ARRAY_BUFFER, indexBuffer)
 
 	// Pass data to buffer
-	gl.BufferDataSource(wasm.ELEMENT_ARRAY_BUFFER, indices, wasm.STATIC_DRAW)
+	gl.BufferData(wasm.ELEMENT_ARRAY_BUFFER, indices, wasm.STATIC_DRAW)
 
 	// Unbind buffer
 	gl.BindBuffer(wasm.ELEMENT_ARRAY_BUFFER, nil)

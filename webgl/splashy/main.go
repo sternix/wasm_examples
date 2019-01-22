@@ -407,7 +407,7 @@ func (q *QuadFX) Init(frag string) error {
 	q.quadBuf = gl.CreateBuffer()
 	// texCoord/posCoord
 	gl.BindBuffer(wasm.ARRAY_BUFFER, q.quadBuf)
-	gl.BufferDataSource(wasm.ARRAY_BUFFER, q.vertexData, wasm.STATIC_DRAW)
+	gl.BufferData(wasm.ARRAY_BUFFER, q.vertexData, wasm.STATIC_DRAW)
 	return nil
 
 }
