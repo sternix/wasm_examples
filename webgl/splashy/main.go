@@ -109,7 +109,7 @@ func main() {
 
 	fps := doc.ElementById("fps").(wasm.HTMLDivElement)
 
-	var rafcb int
+	var rafcb uint
 	renderFrame := func(cb wasm.FrameRequestCallback, now float64) {
 		// Update the DOM less frequently TODO: func on this
 		tdiff := now - tmark

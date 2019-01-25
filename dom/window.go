@@ -46,7 +46,7 @@ func main() {
 	}
 	doc.Body().AppendChild(clock)
 
-	var rafcb int
+	var rafcb uint
 	fn := func(cb wasm.FrameRequestCallback, t float64) {
 		clock.SetInnerHTML(time.Now().Format("15:04:05"))
 		rafcb = win.RequestAnimationFrame(cb)

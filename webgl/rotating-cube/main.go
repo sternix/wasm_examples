@@ -163,7 +163,7 @@ func main() {
 	// Bind to element array for draw function
 	gl.BindBuffer(wasm.ELEMENT_ARRAY_BUFFER, indexBuffer)
 
-	var rafcb int
+	var rafcb uint
 	renderFrame := func(cb wasm.FrameRequestCallback, t float64) {
 		// Calculate rotation rate
 		now := float32(t)
