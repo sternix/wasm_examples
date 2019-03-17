@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>HTL5 File Drag &amp; Drop API</title>
+	<link rel="stylesheet" type="text/css" href="/assets/upload_styles.css" />
+</head>
+<body>
+
+<h1>HTL5 File Drag &amp; Drop API</h1>
+
+<form id="upload">
+	<fieldset>
+		<legend>HTML File Upload</legend>
+		<div>
+			<label for="fileselect">Files to upload:</label>
+			<input type="file" id="fileselect" name="fileselect[]" multiple />
+			<div id="filedrag">or drop files here</div>
+		</div>
+	</fieldset>
+</form>
+
+<div id="progress"></div>
+
+<div id="messages">
+	<p>Status Messages</p>
+</div>
+
+<script src="wasm_exec.js"></script>
+<script>
+	const go = new Go();
+	WebAssembly.instantiateStreaming(fetch("fileupload.wasm"), go.importObject).then((result) => {
+		go.run(result.instance);
+	});
+</script>
+
+</body>
+</html>
